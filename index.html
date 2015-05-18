@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Disappearing Ninja</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="bower_components/jQuery/dist/jquery.js"></script>
+	<script type="text/javascript">
+		/*function disappear({
+		if($(this).hasClass("disappear")){
+			$(this).hide();
+			})
+
+		$document.ready(function(){
+
+			//$("img").click(disappear);
+			
+			$(".disappear").click(function(){
+				$("img.disappear").hide()
+			})
+		})*/
+		$(document).ready(function(){
+			
+			function disappear(){
+				if($(this).hasClass("disappear")){
+					$(this).fadeOut(2000);
+				}
+			}
+
+			$("img").click(disappear);
+
+			$(".restore").click(function(){
+				$("img.disappear").fadeIn(1000)
+			})
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="pics">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+			<img class="disappear" src="img/potato.png" alt="potato">
+		</div>
+		<button class="restore">Restore</button>
+	</div>
+</body>
+</html>
